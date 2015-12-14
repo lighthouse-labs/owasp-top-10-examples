@@ -2,7 +2,6 @@
 
 This is a simple example to understand broken session management. To see it in action:
 
-- run `rake db:create db:migrate db:seed`
 - run `shotgun -p 3000`
 - load `http://localhost:3000/`
 - sign in as the admin user with the username `admin` and password `admin`

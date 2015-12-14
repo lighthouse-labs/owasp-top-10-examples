@@ -1,12 +1,18 @@
 <!doctype html>
 <html>
 <head>
-  <title>A02 - Broken Authentication and Session Management</title>
+  <title>A04 - Insecure Direct Object References</title>
 </head>
 <body>
-<h1>A02 - Broken Authentication and Session Management</h1>
+<h1>A04 - Insecure Direct Object References</h1>
 <% if current_user %>
   <h2>Hi, <%= current_user.real_name %></h2>
+  <h2>Your notes</h2>
+  <ul>
+    <% @notes.each do |note| %>
+      <li><a href="/notes/<%= note.id %>"><%= note.title %></a></li>
+    <% end %>
+  </ul>
   <p><a href="/logout">Sign out</a></p>
 <% else %>
   <form action="/login" method="post">
