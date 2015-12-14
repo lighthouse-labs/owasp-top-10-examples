@@ -1,0 +1,10 @@
+gem 'rake'
+gem 'activesupport'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'sinatra-activerecord'
+gem 'puma'
+group :development do
+  gem 'shotgun'
+  gem 'sqlite3'
+end
