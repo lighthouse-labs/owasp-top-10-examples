@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+  <title>A03 - Cross-Site Scripting (XSS)</title>
+</head>
+<body>
+<h1>A03 - Cross-Site Scripting (XSS)</h1>
+<h2>User list</h2>
+<% @users.each do |user| %>
+  <h3><%= user.real_name %></h3>
+<% end %>
+</body>
+</html>
