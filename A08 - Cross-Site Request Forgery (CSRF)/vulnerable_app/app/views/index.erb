@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <title>A08 - Cross-Site Request Forgery (CSRF)</title>
+</head>
+<body>
+<h1>A08 - Cross-Site Request Forgery (CSRF)</h1>
+<% if current_user %>
+  <h2>Hi, <%= current_user.real_name %></h2>
+  <p><a href="/logout">Sign out</a></p>
+<% else %>
+  <form action="/login" method="post">
+    <input name="username" placeholder="Username" />
+    <input name="password" type="password" placeholder="Password" />
+    <button>Sign in</button>
+  </form>
+<% end %>
+</body>
+</html>
