@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <title>A06 - Sensitive Data Exposure</title>
+</head>
+<body>
+<h1>A06 - Sensitive Data Exposure</h1>
+<h2>Users</h2>
+<div id="users">Loading...</div>
+<script>
+  (function () {
+    var r = new XMLHttpRequest();
+    r.open('GET', '/users', true);
+    r.onreadystatechange = function () {
+      if (r.readyState != 4 || r.status != 200) return;
+      document.getElementById('users').innerHTML = JSON.parse(r.responseText).reduce(function (html, user) {
+        return html + '<p>' + user.username + '</p>';
+      }, '');
+    };
+    r.send();
+  })();
+</script>
+</body>
+</html>
