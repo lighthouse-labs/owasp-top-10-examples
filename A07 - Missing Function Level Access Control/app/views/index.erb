@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <title>A07 - Missing Function Level Access Control</title>
+</head>
+<body>
+<h1>A07 - Missing Function Level Access Control</h1>
+<% if current_user %>
+  <h2>Hi, <%= current_user.real_name %></h2>
+  <% if current_user.admin? %>
+    <p><a href="/admins_only">For admins only</a></p>
+  <% end %>
+  <p><a href="/logout">Sign out</a></p>
+<% else %>
+  <form action="/login" method="post">
+    <input name="username" placeholder="Username" />
+    <input name="password" type="password" placeholder="Password" />
+    <button>Sign in</button>
+  </form>
+<% end %>
+</body>
+</html>

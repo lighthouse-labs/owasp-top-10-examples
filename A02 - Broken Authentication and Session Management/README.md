@@ -1,6 +1,6 @@
 # A02 - Broken Authentication and Session Management
 
-This is a simple example to understand broken session management. To see it in action:
+This is a simple example to explain broken session management. To see it in action:
 
 - run `shotgun -p 3000`
 - load `http://localhost:3000/`
