@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <title>A10 - Unvalidated Redirects and Forwards</title>
+</head>
+<body>
+<h1>A10 - Unvalidated Redirects and Forwards</h1>
+<% if current_user %>
+  <h2>Hi, <%= current_user.real_name %></h2>
+  <p><a href="/logout">Sign out</a></p>
+<% else %>
+  <form action="/login" method="post">
+    <input name="redirect_to" type="hidden" value="<%= params[:redirect_to] %>" />
+    <input name="username" placeholder="Username" />
+    <input name="password" type="password" placeholder="Password" />
+    <button>Sign in</button>
+  </form>
+<% end %>
+</body>
+</html>
